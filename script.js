@@ -10,28 +10,37 @@ console.log(numeroKm, userAge)
 
 const priceForKm = 0.21 // numero
 
-let ticketPrice = 0,  // tutti numeri
-discount = 0,
-finalPrice = 0
 
-// calcolo il prezzo del biglietto senza sconto 
+if ( isNaN(numeroKm) == true || isNaN(userAge) == true){
+    console.log('inserisci i dati corretti')
+} else {
+    let ticketPrice = 0,  // tutti numeri
+    discount = 0,
+    finalPrice = 0
+    
+    // calcolo il prezzo del biglietto senza sconto 
+    
+    ticketPrice = ( numeroKm * priceForKm)
+    console.log(ticketPrice)
+    
+    // quantifico lo sconto in base all'età
+    
+    if( userAge < 18 ){
+        discount = ticketPrice * 0.2
+    } else if ( userAge >= 65){
+        discount = ticketPrice * 0.4
+    }
+    
+    // calcolo il prezzo finale applicando l'eventua sconto
+    
+    finalPrice = ticketPrice - discount
+    
+    console.log(`Prezzo biglietto: €${finalPrice.toFixed(2)}`)
+    
+    
 
-ticketPrice = ( numeroKm * priceForKm)
-console.log(ticketPrice)
-
-// quantifico lo sconto in base all'età
-
-if( userAge < 18 ){
-    discount = ticketPrice * 0.2
-} else if ( userAge >= 65){
-    discount = ticketPrice * 0.4
 }
 
-// calcolo il prezzo finale applicando l'eventua sconto
-
-finalPrice = ticketPrice - discount
-
-console.log(`Prezzo biglietto: €${finalPrice.toFixed(2)}`)
 
 
 
