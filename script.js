@@ -11,7 +11,7 @@ console.log(numeroKm, userAge)
 const priceForKm = 0.21 // numero
 
 
-if ( isNaN(numeroKm) == true || isNaN(userAge) == true){
+if ( isNaN(numeroKm) || isNaN(userAge) || numeroKm < 0  ){
     console.log('inserisci i dati corretti')
 } else {
     let ticketPrice = 0,  // tutti numeri
@@ -36,6 +36,9 @@ if ( isNaN(numeroKm) == true || isNaN(userAge) == true){
     finalPrice = ticketPrice - discount
     
     console.log(`Prezzo biglietto: €${finalPrice.toFixed(2)}`)
+
+    const formattedPrice = new Intl.NumberFormat( 'it-IT' , {style: 'currency', currency: 'EUR' }).format( finalPrice)
+    console.log(`Prezzo biglietto: ${formattedPrice}`)
     
     
 
